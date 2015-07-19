@@ -23,7 +23,7 @@ var isolog = require('isolog');
 ###On the Server
 Isolog works by creating a route and listening for a get request from a client to start sending logs. And so, when you init the server you must pass it a reference to your express app. 
 ```javascript
-isoLog.initServer(yourExpressApp);
+isolog.initServer(yourExpressApp);
 ```
 
 ###On the Client
@@ -36,7 +36,7 @@ If your app is isomorphic and code could run on the server AND on the client tha
 
 ##On/Off switch
 By default, messages will not be shown, but once isolog is imported/required and initialised, 
-you can type `isoLog.stopListening()` and `isoLog.stopListening()` to turn on/off logging to the browser. 
+you can type `isolog.stopListening()` and `isolog.stopListening()` to turn on/off logging to the browser. 
 Your setting is saved in localStorage for next time.
 
 ##Browser Support

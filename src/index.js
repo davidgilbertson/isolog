@@ -19,7 +19,7 @@ function send(consoleData) {
         const errorMessage = {
             consoleMethod: consoleData.consoleMethod,
             args: [
-                'isoLog couldn\'t send console.' + consoleData.consoleMethod + '() message to the client',
+                'isolog couldn\'t send console.' + consoleData.consoleMethod + '() message to the client',
                 err.toString()
             ]
         };
@@ -111,47 +111,47 @@ function logToClientConsole(e) {
 function initClient() {
     if (!canUseDOM || !window.EventSource || initialized) return;
 
-    let isoLogStream;
+    let isologStream;
 
     function startListening() {
         if (initialized) return;
 
-        isoLogStream = new EventSource('/iso-log');
-        isoLogStream.onmessage = logToClientConsole;
+        isologStream = new EventSource('/iso-log');
+        isologStream.onmessage = logToClientConsole;
 
         initialized = true;
 
         console.log('%c  --  CONSOLE MESSAGES FROM THE SERVER WILL APPEAR HERE --  ', consoleCss);
-        console.log('%c  --  type "isoLog.stopListening()" to stop --  ', consoleCss);
+        console.log('%c  --  type "isolog.stopListening()" to stop --  ', consoleCss);
     }
 
     function stopListening() {
         if (!initialized) return;
 
-        isoLogStream.close();
+        isologStream.close();
 
         initialized = false;
     }
 
-    window.isoLog = {
+    window.isolog = {
         startListening: () => {
-            localStorage.setItem('isoLog', 'listening');
+            localStorage.setItem('isolog', 'listening');
 
             startListening();
         },
 
         stopListening: () => {
-            localStorage.removeItem('isoLog');
+            localStorage.removeItem('isolog');
 
             stopListening();
         }
     };
 
-    if (localStorage.getItem('isoLog') === 'listening') {
+    if (localStorage.getItem('isolog') === 'listening') {
         startListening()
     } else {
         console.log('%c  --  CONSOLE MESSAGES FROM THE SERVER ARE AVAILABLE --  ', consoleCss);
-        console.log('%c  --  type "isoLog.startListening()" to see them here --  ', consoleCss);
+        console.log('%c  --  type "isolog.startListening()" to see them here --  ', consoleCss);
     }
 }
 
