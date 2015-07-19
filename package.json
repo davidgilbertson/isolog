@@ -1,0 +1,26 @@
+{
+  "name": "isolog",
+  "version": "1.0.0",
+  "description": "send node console messages to the client",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/davidgilbertson/isolog"
+  },
+  "keywords": [
+    "console",
+    "log",
+    "node",
+    "client",
+    "browser"
+  ],
+  "author": "David Gilbertson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/davidgilbertson/isolog/issues"
+  },
+  "homepage": "https://github.com/davidgilbertson/isolog"
+}
