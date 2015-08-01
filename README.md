@@ -8,7 +8,7 @@ It also has the benefit of easy-to-navigate collapsible object trees that browse
 
 The console message type will be preserved, so if you `console.error('bup bow')` in node, you will get a nice red `console.error('bup bow')` in the browser.
 
-##Using The Thing
+## Using The Thing
 This is meant for apps that use express 4.
 
 For ES2015:
@@ -20,13 +20,13 @@ or old school:
 var isolog = require('isolog');
 ```
 
-###On the Server
+### On the Server
 Isolog works by creating a route and listening for a get request from a client to start sending logs. And so, when you init the server you must pass it a reference to your express app. 
 ```javascript
 isolog.initServer(yourExpressApp);
 ```
 
-###On the Client
+### On the Client
 In code that will run on the client:
 ```javascript
 isolog.initClient();
@@ -34,10 +34,10 @@ isolog.initClient();
 
 If your app is isomorphic and code could run on the server AND on the client that's fine, the `init()` methods will be ignored if not running in the right environment.
 
-##On/Off switch
+## On/Off switch
 By default, messages will not be shown, but once isolog is imported/required and initialised, 
 you can type `isolog.stopListening()` and `isolog.stopListening()` to turn on/off logging to the browser. 
 Your setting is saved in localStorage for next time.
 
-##Browser Support
+## Browser Support
 Isolog uses `EventSource` which means it only works in cool browsers.
